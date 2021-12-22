@@ -7,8 +7,16 @@ import http from "http";
 import { ApolloServer } from "apollo-server-express";
 import { buildSchema } from "type-graphql";
 import { ApolloServerPluginDrainHttpServer } from "apollo-server-core";
+import { connect } from "mongoose";
 
 const main = async () => {
+
+    // MONGODB CONFIGURATION
+  connect(process.env.DB_URL!).then(() => {
+    console.log("📝 MongoDB TEST DB CONNECTED...!");
+  });
+
+  
   // EXPRESS CONFIGURATIONs
   const app = express();
   app.use(express.json());
