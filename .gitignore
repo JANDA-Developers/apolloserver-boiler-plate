@@ -1,0 +1,9 @@
+#Dependency
+/node_modules
+
+#Secrets
+.env.dev
+.env.prod
+
+#build
+/dist
